@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./operations.js"></script>
+    <script src="./interfaceAdjustments.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Asignación 1</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row pageTitle">
+            <h1>ASIGNACION #1</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row label">
+                    Qué desea hacer ? <br>
+                    <button class="btn btn-default btnMenuOptions" id="buttonOperations"  disabled="true" onclick="switchFunctionalities(1)">Operaciones matemáticas</button>
+                    <button class="btn btn-success btnMenuOptions" id="buttonValidations" disable="false" onclick="switchFunctionalities(2)">Validaciones</button>
+                </div>
+                <div class="row label" style="display: block;" id="rowMathCalculations">
+                    Operaciones matemáticas<br>
+                    <button class="btn btn-default btnOperation" value="+" onclick="calculate(this)">Sumar</button>
+                    <button class="btn btn-default btnOperation" value="-" onclick="calculate(this)">Restar</button>
+                    <button class="btn btn-default btnOperation" value="*" onclick="calculate(this)">Multiplicar</button>
+                    <button class="btn btn-default btnOperation" value="/" onclick="calculate(this)">Dividir</button>
+                </div>
+                <div class="row" style="display: none;" id="rowVerifications">
+                    Validaciones<br>
+                    <button class="btn btn-default btnValidations" onclick="evaluatePrimeNumber()">Número primo</button>
+                    <button class="btn btn-default btnValidations" onclick="evaluatePalindrome()">Número políndromo</button>
+                </div>
+                <div class="row">
+                    <button class="btn btn-danger" onclick="clearForm()">Limpiar formulario</button>
+                    <button class="btn btn-danger" onclick="restartPage()">Reiniciar formulario</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="label" id="parameterFirstText">
+                        Ingrese el primer valor numérico:
+                    </div>
+                    <div>
+                        <input type="text" id="numericValue1">
+                    </div>
+                </div>
+                <div class="row" id="parameterSecond" style="display: block;">
+                    <div class="label">
+                        Ingrese el segundo valor numérico:
+                    </div>
+                    <div>
+                        <input type="text" id="numericValue2">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="alert alert-success results" style="margin-top: 25px; margin-bottom: 25px;" role="alert" id="result">
+                        Historial de cálculos o validaciones realizados:
+                    </div>
+                </div>
+            </div>        </div>
+    </div>
+</body>
+</html>
